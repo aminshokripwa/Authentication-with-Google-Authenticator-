@@ -1,0 +1,17 @@
+<% var messages = getMessages(); %> 
+
+<% if(messages.validation_errors){ %>
+<br />
+<div class="alert alert-danger">
+  <% messages.validation_errors.forEach(error => { %> <%= error.msg %><br />
+  <% }) %>
+</div>
+<% } %>
+
+<% if(messages.verify_success){ %>
+  <br />
+  <div class="alert alert-success">
+    <% messages.verify_success.forEach(error => { %> <%= error.msg %><br />
+    <% }) %>
+  </div>
+  <% } %>

@@ -1,0 +1,20 @@
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+    <a class="nav-link <% if (page_name === 'home'){ %> active <% } %>" href="/">Home</a>
+  </li>
+  <% if (!user) { %>
+  <li class="nav-item">
+    <a class="nav-link <% if (page_name === 'login'){ %> active <% } %>" href="login">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <% if (page_name === 'login-2fa'){ %> active <% } %>" href="login-2fa">Two-Factor Authentication Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <% if (page_name === 'register'){ %> active <% } %>" href="register">Register</a>
+  </li>
+  <% } %>
+</ul>
+
+<% if (user) { %>
+<a class="btn btn-outline-success my-2 my-sm-0" href="logout">Logout</a>
+<% } %>
